@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
-}
+/* Remove old .App styles if not used */
+/* .App { */
+/*   text-align: center; */
+/* } */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Remove or update .App-header if not used */
+/* .App-header { */
+/*   background-color: #282c34; */
+/*   min-height: 100vh; */
+/*   display: flex; */
+/*   flex-direction: column; */
+/*   align-items: center; */
+/*   justify-content: center; */
+/*   font-size: calc(10px + 2vmin); */
+/*   color: white; */
+/* } */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Add moderate style for sidebar refinement list */
+.ais-RefinementList-list {
+  padding-left: 0;
+  list-style: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ais-RefinementList-item {
+  margin-bottom: 0.5em;
+}
+.ais-RefinementList-label {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 1em;
+  color: #232526;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 0.2em 0.5em;
+  transition: background 0.15s;
+}
+.ais-RefinementList-label:hover {
+  background: #e3e6ee;
+}
+.ais-RefinementList-checkbox {
+  margin-right: 0.5em;
 }
 
-.App-link {
-  color: #61dafb;
+/* Style the search box */
+.ais-SearchBox-form {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e3e6ee;
+  padding: 0.3em 0.8em;
+  box-shadow: 0 1px 4px 0 rgba(31, 38, 135, 0.04);
+}
+.ais-SearchBox-input {
+  border: none;
+  outline: none;
+  font-size: 1em;
+  background: transparent;
+  width: 100%;
+  padding: 0.5em 0;
+}
+.ais-SearchBox-submit,
+.ais-SearchBox-reset {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 0.3em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive tweaks for sidebar */
+@media (max-width: 900px) {
+  .ais-RefinementList-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em 1em;
   }
-  to {
-    transform: rotate(360deg);
+  .ais-RefinementList-item {
+    margin-bottom: 0;
   }
 }

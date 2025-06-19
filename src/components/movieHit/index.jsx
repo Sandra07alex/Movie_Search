@@ -9,6 +9,15 @@ const HitContainer = styled.div`
   align-items: center;
   max-width: 300px;
   margin: 2em 1em;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.10);
+  padding: 1.5em 1em 1.5em 1em;
+  transition: transform 0.15s, box-shadow 0.15s;
+  &:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  }
 `;
 
 const MoviePoster = styled.img`
@@ -44,6 +53,18 @@ const Genre = styled.div`
   margin-top: 10px;
 `;
 
+const GenreBadge = styled.div`
+  background: #236adb;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.2em 0.8em;
+  font-size: 13px;
+  margin-top: 0.5em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: inline-block;
+`;
+
 const HitsContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -62,6 +83,13 @@ export function MovieHit(props) {
       <Title>
         <MovieHighlight hit={hit} attribute="title" />
       </Title>
+      {hit.genres && Array.isArray(hit.genres) && hit.genres.length > 0 && (
+        <div style={{ marginTop: 4, marginBottom: 4 }}>
+          {hit.genres.map((genre, idx) => (
+            <GenreBadge key={idx}>{genre}</GenreBadge>
+          ))}
+        </div>
+      )}
       <Overview>
         <MovieHighlight hit={hit} attribute="overview" />
       </Overview>
